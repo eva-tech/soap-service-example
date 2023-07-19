@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hIp6B53lYCJdZpLN5GMbyXVHyMKbDx4BSw45cSdle0o=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="eciHWB+ddFsZhwA4YAbZaBgniaqA5vjQU1zwMeQ/pSc=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="pacs_soap_service">
       <properties>
@@ -330,10 +330,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="pacs_soap_service" contract="EVASoap.pacs_soap_service" bindingType="basicHttpBinding" address="https://testing-soap.dev-land.space/api/v1/soap/?WSDL/$metadata" bindingConfiguration="pacs_soap_service">
+    <endpoint name="pacs_soap_service" contract="EVASoap.pacs_soap_service" bindingType="basicHttpBinding" address="https://staging.dev-land.space/api/v1/soap/?WSDL" bindingConfiguration="pacs_soap_service">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata</serializedValue>
+          <serializedValue>https://staging.dev-land.space/api/v1/soap/?WSDL</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -415,10 +415,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="pacs_soap_service1" contract="EVASoap.pacs_soap_service" bindingType="basicHttpBinding" address="https://testing-soap.dev-land.space/api/v1/soap/?WSDL/$metadata" bindingConfiguration="pacs_soap_service1">
+    <endpoint name="pacs_soap_service1" contract="EVASoap.pacs_soap_service" bindingType="basicHttpBinding" address="https://staging.dev-land.space/api/v1/soap/?WSDL" bindingConfiguration="pacs_soap_service1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata</serializedValue>
+          <serializedValue>https://staging.dev-land.space/api/v1/soap/?WSDL</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

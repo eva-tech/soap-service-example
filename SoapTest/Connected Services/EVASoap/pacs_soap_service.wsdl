@@ -2,8 +2,8 @@
 <wsdl:definitions xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s1="http://spyne.io/schema" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:s0="spyne.model.primitive.string" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:wsdlsoap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" name="pacs_soap_service" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
-      <xs:import namespace="http://spyne.io/schema" />
       <xs:import namespace="spyne.model.primitive.string" />
+      <xs:import namespace="http://spyne.io/schema" />
       <xs:complexType name="authenticate" />
       <xs:complexType name="AuthenticationTokenResponse">
         <xs:sequence>
@@ -17,57 +17,7 @@
           <xs:element name="password" type="s0:MandatoryString" />
         </xs:sequence>
       </xs:complexType>
-      <xs:simpleType name="PractitionerComplexModel_last_surnameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="CancelOrder_cancel_reasonType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_phone_codeType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderResponseComplex_folioType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_phone_codeType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_order_descriptionType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_nameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_genderType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="FacilityComplexModel_external_identifierType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_modalityType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_emailType">
+      <xs:simpleType name="OrderComplexModel_study_internal_codeType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -77,27 +27,42 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_study_internal_codeType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_first_surnameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderResponseComplex_statusType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
       <xs:simpleType name="PatientComplexModel_phone_numberType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="TokenHeader_tokenType">
+      <xs:simpleType name="PractitionerComplexModel_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientResponseComplex_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AppointmentResponseComplex_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_emailType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_order_folioType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AppointmentResponseComplex_room_identifierType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_study_nameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -112,7 +77,22 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_order_folioType">
+      <xs:simpleType name="OrderResponseComplex_folioType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TokenHeader_tokenType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_first_surnameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderResponseComplex_statusType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -122,7 +102,47 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_study_nameType">
+      <xs:simpleType name="OrderComplexModel_order_descriptionType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelOrder_cancel_reasonType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientResponseComplex_identifierType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_modalityType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FacilityComplexModel_external_identifierType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_last_surnameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_genderType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -144,15 +164,19 @@
           <xs:element name="StudyCode" type="soap11env:OrderComplexModel_study_internal_codeType" />
           <xs:element name="StudyName" type="soap11env:OrderComplexModel_study_nameType" />
           <xs:element name="Modality" type="soap11env:OrderComplexModel_modalityType" />
+          <xs:element minOccurs="0" name="RoomIdentifier" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="PatientResponseComplex">
         <xs:sequence>
           <xs:element name="id" type="s1:MandatoryUuid" />
+          <xs:element name="Identifier" type="soap11env:PatientResponseComplex_identifierType" />
+          <xs:element name="Name" type="soap11env:PatientResponseComplex_nameType" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="PatientComplexModel">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string" />
           <xs:element name="Name" type="soap11env:PatientComplexModel_nameType" />
           <xs:element minOccurs="0" name="FirstSurname" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="LastSurname" nillable="true" type="xs:string" />
@@ -191,12 +215,39 @@
           <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
         </xs:restriction>
       </xs:simpleType>
+      <xs:simpleType name="AppointmentResponseComplex_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelAppointment_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
       <xs:simpleType name="GetOrder_idType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
           <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
         </xs:restriction>
       </xs:simpleType>
+      <xs:simpleType name="ScheduleOrder_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="AppointmentResponseComplex">
+        <xs:sequence>
+          <xs:element name="Id" type="soap11env:AppointmentResponseComplex_idType" />
+          <xs:element name="Name" type="soap11env:AppointmentResponseComplex_nameType" />
+          <xs:element name="RoomIdentifier" type="soap11env:AppointmentResponseComplex_room_identifierType" />
+          <xs:element name="StartDate" type="xs:dateTime" />
+          <xs:element name="EndDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="OrderResponseComplex">
         <xs:sequence>
           <xs:element name="Id" type="soap11env:OrderResponseComplex_idType" />
@@ -212,6 +263,11 @@
           <xs:element name="Physician" type="soap11env:PractitionerComplexModel" />
         </xs:sequence>
       </xs:complexType>
+      <xs:complexType name="CancelAppointment">
+        <xs:sequence>
+          <xs:element name="OrderId" type="soap11env:CancelAppointment_idType" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="CancelOrder">
         <xs:sequence>
           <xs:element name="OrderId" type="soap11env:CancelOrder_idType" />
@@ -224,10 +280,18 @@
           <xs:element name="OrderId" type="soap11env:GetOrder_idType" />
         </xs:sequence>
       </xs:complexType>
+      <xs:complexType name="ScheduleOrder">
+        <xs:sequence>
+          <xs:element name="OrderId" type="soap11env:ScheduleOrder_idType" />
+          <xs:element name="AppointmentDate" type="xs:dateTime" />
+          <xs:element name="AppointmentDuration" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="SendOrderResponseComplex">
         <xs:sequence>
           <xs:element name="Order" type="soap11env:OrderResponseComplex" />
           <xs:element name="Patient" type="soap11env:PatientResponseComplex" />
+          <xs:element minOccurs="0" name="Appointment" nillable="true" type="soap11env:AppointmentResponseComplex" />
         </xs:sequence>
       </xs:complexType>
       <xs:complexType name="SendOrder">
@@ -245,6 +309,16 @@
           <xs:element name="get_orderResult" type="soap11env:SendOrderResponseComplex" />
         </xs:sequence>
       </xs:complexType>
+      <xs:complexType name="cancel_appointmentResponse">
+        <xs:sequence>
+          <xs:element name="cancel_appointmentResult" type="soap11env:SendOrderResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="schedule_orderResponse">
+        <xs:sequence>
+          <xs:element name="schedule_orderResult" type="soap11env:SendOrderResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
       <xs:complexType name="send_orderResponse">
         <xs:sequence>
           <xs:element name="send_orderResult" type="soap11env:SendOrderResponseComplex" />
@@ -259,13 +333,18 @@
       <xs:element name="Patient" type="soap11env:PatientComplexModel" />
       <xs:element name="Physician" type="soap11env:PractitionerComplexModel" />
       <xs:element name="authenticateResponse" type="soap11env:authenticateResponse" />
+      <xs:element name="Appointment" type="soap11env:AppointmentResponseComplex" />
       <xs:element name="OrderRequest" type="soap11env:SendOrderRequest" />
+      <xs:element name="CancelAppointment" type="soap11env:CancelAppointment" />
       <xs:element name="CancelOrder" type="soap11env:CancelOrder" />
       <xs:element name="GetOrder" type="soap11env:GetOrder" />
+      <xs:element name="ScheduleOrder" type="soap11env:ScheduleOrder" />
       <xs:element name="SendOrderResponseComplex" type="soap11env:SendOrderResponseComplex" />
       <xs:element name="SendOrder" type="soap11env:SendOrder" />
       <xs:element name="CancelOrderResponse" type="soap11env:CancelOrderResponse" />
       <xs:element name="OrderResponse" type="soap11env:OrderResponse" />
+      <xs:element name="cancel_appointmentResponse" type="soap11env:cancel_appointmentResponse" />
+      <xs:element name="schedule_orderResponse" type="soap11env:schedule_orderResponse" />
       <xs:element name="send_orderResponse" type="soap11env:send_orderResponse" />
     </xs:schema>
     <xs:schema elementFormDefault="qualified" targetNamespace="spyne.model.primitive.string">
@@ -319,6 +398,18 @@
   <wsdl:message name="CancelOrderResponse">
     <wsdl:part name="CancelOrderResponse" element="soap11env:CancelOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="ScheduleOrder">
+    <wsdl:part name="ScheduleOrder" element="soap11env:ScheduleOrder" />
+  </wsdl:message>
+  <wsdl:message name="schedule_orderResponse">
+    <wsdl:part name="schedule_orderResponse" element="soap11env:schedule_orderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelAppointment">
+    <wsdl:part name="CancelAppointment" element="soap11env:CancelAppointment" />
+  </wsdl:message>
+  <wsdl:message name="cancel_appointmentResponse">
+    <wsdl:part name="cancel_appointmentResponse" element="soap11env:cancel_appointmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="pacs_soap_service">
     <wsdl:operation name="authenticate" parameterOrder="authenticate">
       <wsdl:documentation>Authenticate user and returns a valid token.</wsdl:documentation>
@@ -339,6 +430,16 @@
       <wsdl:documentation>Cancel the order for given id.</wsdl:documentation>
       <wsdl:input name="CancelOrder" message="soap11env:CancelOrder" />
       <wsdl:output name="CancelOrderResponse" message="soap11env:CancelOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleOrder" parameterOrder="ScheduleOrder">
+      <wsdl:documentation>Schedule an order for given date time.</wsdl:documentation>
+      <wsdl:input name="ScheduleOrder" message="soap11env:ScheduleOrder" />
+      <wsdl:output name="schedule_orderResponse" message="soap11env:schedule_orderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelAppointment" parameterOrder="CancelAppointment">
+      <wsdl:documentation>Cancel appointment for given order.</wsdl:documentation>
+      <wsdl:input name="CancelAppointment" message="soap11env:CancelAppointment" />
+      <wsdl:output name="cancel_appointmentResponse" message="soap11env:cancel_appointmentResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="pacs_soap_service" type="soap11env:pacs_soap_service">
@@ -383,15 +484,35 @@
         <wsdlsoap11:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ScheduleOrder">
+      <wsdlsoap11:operation soapAction="ScheduleOrder" style="document" />
+      <wsdl:input name="ScheduleOrder">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:TokenHeader" part="TokenHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="schedule_orderResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelAppointment">
+      <wsdlsoap11:operation soapAction="CancelAppointment" style="document" />
+      <wsdl:input name="CancelAppointment">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:TokenHeader" part="TokenHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancel_appointmentResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="AuthService">
     <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
-      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata" />
+      <wsdlsoap11:address location="https://staging.dev-land.space/api/v1/soap/?WSDL" />
     </wsdl:port>
   </wsdl:service>
   <wsdl:service name="OrderService">
     <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
-      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata" />
+      <wsdlsoap11:address location="https://staging.dev-land.space/api/v1/soap/?WSDL" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
