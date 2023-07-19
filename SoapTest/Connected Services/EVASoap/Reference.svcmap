@@ -22,7 +22,7 @@
     <MetadataSource Address="https://testing-soap.dev-land.space/api/v1/soap/?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="pacs_soap_service11.wsdl" MetadataType="Wsdl" ID="c53fc4c1-7a58-4368-8691-65ccde703abe" SourceId="1" SourceUrl="https://testing-soap.dev-land.space/api/v1/soap/?WSDL" />
+    <MetadataFile FileName="pacs_soap_service.wsdl" MetadataType="Wsdl" ID="c53fc4c1-7a58-4368-8691-65ccde703abe" SourceId="1" SourceUrl="https://testing-soap.dev-land.space/api/v1/soap/?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
