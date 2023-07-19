@@ -111,25 +111,13 @@
     <None Include="Connected Services\EVASoap\SoapTest.EVASoap.authenticateResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EVASoap\SoapTest.EVASoap.authenticateResponse1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\EVASoap\SoapTest.EVASoap.CancelOrderResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\EVASoap\SoapTest.EVASoap.CancelOrderResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EVASoap\SoapTest.EVASoap.OrderResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EVASoap\SoapTest.EVASoap.OrderResponse1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\EVASoap\SoapTest.EVASoap.send_orderResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\EVASoap\SoapTest.EVASoap.send_orderResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
