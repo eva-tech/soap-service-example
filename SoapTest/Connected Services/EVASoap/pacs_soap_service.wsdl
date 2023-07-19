@@ -17,47 +17,7 @@
           <xs:element name="password" type="s0:MandatoryString" />
         </xs:sequence>
       </xs:complexType>
-      <xs:simpleType name="PractitionerComplexModel_last_surnameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="CancelOrder_cancel_reasonType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_phone_codeType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderResponseComplex_folioType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_phone_codeType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="OrderComplexModel_order_descriptionType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_nameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_genderType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="FacilityComplexModel_external_identifierType">
+      <xs:simpleType name="PatientComplexModel_nameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -67,12 +27,17 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_emailType">
+      <xs:simpleType name="PractitionerComplexModel_phone_numberType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_phone_numberType">
+      <xs:simpleType name="PatientComplexModel_emailType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_nameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -82,27 +47,22 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="PractitionerComplexModel_first_surnameType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
       <xs:simpleType name="OrderResponseComplex_statusType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
+      <xs:simpleType name="CancelOrder_cancel_reasonType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_emailType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
       <xs:simpleType name="PatientComplexModel_phone_numberType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="TokenHeader_tokenType">
-        <xs:restriction base="xs:string">
-          <xs:minLength value="1" />
-        </xs:restriction>
-      </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_nameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -117,12 +77,52 @@
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="PatientComplexModel_emailType">
+      <xs:simpleType name="PatientComplexModel_genderType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_first_surnameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
       </xs:simpleType>
       <xs:simpleType name="OrderComplexModel_study_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderResponseComplex_folioType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FacilityComplexModel_external_identifierType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TokenHeader_tokenType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_order_descriptionType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_last_surnameType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
         </xs:restriction>
@@ -153,6 +153,7 @@
       </xs:complexType>
       <xs:complexType name="PatientComplexModel">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string" />
           <xs:element name="Name" type="soap11env:PatientComplexModel_nameType" />
           <xs:element minOccurs="0" name="FirstSurname" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="LastSurname" nillable="true" type="xs:string" />
@@ -179,7 +180,7 @@
           <xs:element minOccurs="0" name="authenticateResult" nillable="true" type="soap11env:AuthenticationTokenResponse" />
         </xs:sequence>
       </xs:complexType>
-      <xs:simpleType name="OrderResponseComplex_idType">
+      <xs:simpleType name="GetOrder_idType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
           <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
@@ -191,7 +192,7 @@
           <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
         </xs:restriction>
       </xs:simpleType>
-      <xs:simpleType name="GetOrder_idType">
+      <xs:simpleType name="OrderResponseComplex_idType">
         <xs:restriction base="xs:string">
           <xs:minLength value="1" />
           <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
@@ -386,12 +387,12 @@
   </wsdl:binding>
   <wsdl:service name="AuthService">
     <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
-      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata" />
+      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL" />
     </wsdl:port>
   </wsdl:service>
   <wsdl:service name="OrderService">
     <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
-      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL/$metadata" />
+      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
