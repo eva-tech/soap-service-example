@@ -49,22 +49,6 @@ Namespace EVASoap
         
         <System.ServiceModel.OperationContractAttribute(Action:="CancelOrder", ReplyAction:="*")>  _
         Function CancelOrderAsync(ByVal request As EVASoap.CancelOrder1) As System.Threading.Tasks.Task(Of EVASoap.CancelOrderResponse1)
-        
-        'CODEGEN: Se está generando un contrato de mensaje, ya que la operación ScheduleOrder no es RPC ni está encapsulada en un documento.
-        <System.ServiceModel.OperationContractAttribute(Action:="ScheduleOrder", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function ScheduleOrder(ByVal request As EVASoap.ScheduleOrder1) As EVASoap.schedule_orderResponse1
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="ScheduleOrder", ReplyAction:="*")>  _
-        Function ScheduleOrderAsync(ByVal request As EVASoap.ScheduleOrder1) As System.Threading.Tasks.Task(Of EVASoap.schedule_orderResponse1)
-        
-        'CODEGEN: Se está generando un contrato de mensaje, ya que la operación CancelAppointment no es RPC ni está encapsulada en un documento.
-        <System.ServiceModel.OperationContractAttribute(Action:="CancelAppointment", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function CancelAppointment(ByVal request As EVASoap.CancelAppointment1) As EVASoap.cancel_appointmentResponse1
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="CancelAppointment", ReplyAction:="*")>  _
-        Function CancelAppointmentAsync(ByVal request As EVASoap.CancelAppointment1) As System.Threading.Tasks.Task(Of EVASoap.cancel_appointmentResponse1)
     End Interface
     
     '''<remarks/>
@@ -121,21 +105,21 @@ Namespace EVASoap
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class cancel_appointmentResponse
+    Partial Public Class CancelOrderResponse
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
         
-        Private cancel_appointmentResultField As SendOrderResponseComplex
+        Private cancel_orderResultField As SendOrderResponseComplex
         
         '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property cancel_appointmentResult() As SendOrderResponseComplex
+        Public Property cancel_orderResult() As SendOrderResponseComplex
             Get
-                Return Me.cancel_appointmentResultField
+                Return Me.cancel_orderResultField
             End Get
             Set
-                Me.cancel_appointmentResultField = value
-                Me.RaisePropertyChanged("cancel_appointmentResult")
+                Me.cancel_orderResultField = value
+                Me.RaisePropertyChanged("cancel_orderResult")
             End Set
         End Property
         
@@ -163,8 +147,6 @@ Namespace EVASoap
         
         Private patientField As PatientResponseComplex
         
-        Private appointmentField As AppointmentResponseComplex
-        
         '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Order() As OrderResponseComplex
@@ -186,18 +168,6 @@ Namespace EVASoap
             Set
                 Me.patientField = value
                 Me.RaisePropertyChanged("Patient")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=2)>  _
-        Public Property Appointment() As AppointmentResponseComplex
-            Get
-                Return Me.appointmentField
-            End Get
-            Set
-                Me.appointmentField = value
-                Me.RaisePropertyChanged("Appointment")
             End Set
         End Property
         
@@ -285,10 +255,6 @@ Namespace EVASoap
         
         Private idField As String
         
-        Private identifierField As String
-        
-        Private nameField As String
-        
         '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property id() As String
@@ -298,284 +264,6 @@ Namespace EVASoap
             Set
                 Me.idField = value
                 Me.RaisePropertyChanged("id")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
-        Public Property Identifier() As String
-            Get
-                Return Me.identifierField
-            End Get
-            Set
-                Me.identifierField = value
-                Me.RaisePropertyChanged("Identifier")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
-        Public Property Name() As String
-            Get
-                Return Me.nameField
-            End Get
-            Set
-                Me.nameField = value
-                Me.RaisePropertyChanged("Name")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class AppointmentResponseComplex
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private idField As String
-        
-        Private nameField As String
-        
-        Private roomIdentifierField As String
-        
-        Private startDateField As Date
-        
-        Private endDateField As Date
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property Id() As String
-            Get
-                Return Me.idField
-            End Get
-            Set
-                Me.idField = value
-                Me.RaisePropertyChanged("Id")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
-        Public Property Name() As String
-            Get
-                Return Me.nameField
-            End Get
-            Set
-                Me.nameField = value
-                Me.RaisePropertyChanged("Name")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
-        Public Property RoomIdentifier() As String
-            Get
-                Return Me.roomIdentifierField
-            End Get
-            Set
-                Me.roomIdentifierField = value
-                Me.RaisePropertyChanged("RoomIdentifier")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
-        Public Property StartDate() As Date
-            Get
-                Return Me.startDateField
-            End Get
-            Set
-                Me.startDateField = value
-                Me.RaisePropertyChanged("StartDate")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
-        Public Property EndDate() As Date
-            Get
-                Return Me.endDateField
-            End Get
-            Set
-                Me.endDateField = value
-                Me.RaisePropertyChanged("EndDate")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class CancelAppointment
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private orderIdField As String
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property OrderId() As String
-            Get
-                Return Me.orderIdField
-            End Get
-            Set
-                Me.orderIdField = value
-                Me.RaisePropertyChanged("OrderId")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class schedule_orderResponse
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private schedule_orderResultField As SendOrderResponseComplex
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property schedule_orderResult() As SendOrderResponseComplex
-            Get
-                Return Me.schedule_orderResultField
-            End Get
-            Set
-                Me.schedule_orderResultField = value
-                Me.RaisePropertyChanged("schedule_orderResult")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class ScheduleOrder
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private orderIdField As String
-        
-        Private appointmentDateField As Date
-        
-        Private appointmentDurationField As Byte
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property OrderId() As String
-            Get
-                Return Me.orderIdField
-            End Get
-            Set
-                Me.orderIdField = value
-                Me.RaisePropertyChanged("OrderId")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
-        Public Property AppointmentDate() As Date
-            Get
-                Return Me.appointmentDateField
-            End Get
-            Set
-                Me.appointmentDateField = value
-                Me.RaisePropertyChanged("AppointmentDate")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
-        Public Property AppointmentDuration() As Byte
-            Get
-                Return Me.appointmentDurationField
-            End Get
-            Set
-                Me.appointmentDurationField = value
-                Me.RaisePropertyChanged("AppointmentDuration")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-    Partial Public Class CancelOrderResponse
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private cancel_orderResultField As SendOrderResponseComplex
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property cancel_orderResult() As SendOrderResponseComplex
-            Get
-                Return Me.cancel_orderResultField
-            End Get
-            Set
-                Me.cancel_orderResultField = value
-                Me.RaisePropertyChanged("cancel_orderResult")
             End Set
         End Property
         
@@ -1105,8 +793,6 @@ Namespace EVASoap
         
         Private modalityField As String
         
-        Private roomIdentifierField As String
-        
         '''<remarks/>
         <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Folio() As String
@@ -1164,18 +850,6 @@ Namespace EVASoap
             Set
                 Me.modalityField = value
                 Me.RaisePropertyChanged("Modality")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=5)>  _
-        Public Property RoomIdentifier() As String
-            Get
-                Return Me.roomIdentifierField
-            End Get
-            Set
-                Me.roomIdentifierField = value
-                Me.RaisePropertyChanged("RoomIdentifier")
             End Set
         End Property
         
@@ -1569,90 +1243,6 @@ Namespace EVASoap
         End Sub
     End Class
     
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class ScheduleOrder1
-        
-        <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-        Public TokenHeader As EVASoap.TokenHeader
-        
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/", Order:=0)>  _
-        Public ScheduleOrder As EVASoap.ScheduleOrder
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal TokenHeader As EVASoap.TokenHeader, ByVal ScheduleOrder As EVASoap.ScheduleOrder)
-            MyBase.New
-            Me.TokenHeader = TokenHeader
-            Me.ScheduleOrder = ScheduleOrder
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class schedule_orderResponse1
-        
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/", Order:=0)>  _
-        Public schedule_orderResponse As EVASoap.schedule_orderResponse
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal schedule_orderResponse As EVASoap.schedule_orderResponse)
-            MyBase.New
-            Me.schedule_orderResponse = schedule_orderResponse
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class CancelAppointment1
-        
-        <System.ServiceModel.MessageHeaderAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/")>  _
-        Public TokenHeader As EVASoap.TokenHeader
-        
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/", Order:=0)>  _
-        Public CancelAppointment As EVASoap.CancelAppointment
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal TokenHeader As EVASoap.TokenHeader, ByVal CancelAppointment As EVASoap.CancelAppointment)
-            MyBase.New
-            Me.TokenHeader = TokenHeader
-            Me.CancelAppointment = CancelAppointment
-        End Sub
-    End Class
-    
-    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
-     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
-     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class cancel_appointmentResponse1
-        
-        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://schemas.xmlsoap.org/soap/envelope/", Order:=0)>  _
-        Public cancel_appointmentResponse As EVASoap.cancel_appointmentResponse
-        
-        Public Sub New()
-            MyBase.New
-        End Sub
-        
-        Public Sub New(ByVal cancel_appointmentResponse As EVASoap.cancel_appointmentResponse)
-            MyBase.New
-            Me.cancel_appointmentResponse = cancel_appointmentResponse
-        End Sub
-    End Class
-    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface pacs_soap_serviceChannel
         Inherits EVASoap.pacs_soap_service, System.ServiceModel.IClientChannel
@@ -1782,56 +1372,6 @@ Namespace EVASoap
             inValue.TokenHeader = TokenHeader
             inValue.CancelOrder = CancelOrder
             Return CType(Me,EVASoap.pacs_soap_service).CancelOrderAsync(inValue)
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_ScheduleOrder(ByVal request As EVASoap.ScheduleOrder1) As EVASoap.schedule_orderResponse1 Implements EVASoap.pacs_soap_service.ScheduleOrder
-            Return MyBase.Channel.ScheduleOrder(request)
-        End Function
-        
-        Public Function ScheduleOrder(ByVal TokenHeader As EVASoap.TokenHeader, ByVal ScheduleOrder1 As EVASoap.ScheduleOrder) As EVASoap.schedule_orderResponse
-            Dim inValue As EVASoap.ScheduleOrder1 = New EVASoap.ScheduleOrder1()
-            inValue.TokenHeader = TokenHeader
-            inValue.ScheduleOrder = ScheduleOrder1
-            Dim retVal As EVASoap.schedule_orderResponse1 = CType(Me,EVASoap.pacs_soap_service).ScheduleOrder(inValue)
-            Return retVal.schedule_orderResponse
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_ScheduleOrderAsync(ByVal request As EVASoap.ScheduleOrder1) As System.Threading.Tasks.Task(Of EVASoap.schedule_orderResponse1) Implements EVASoap.pacs_soap_service.ScheduleOrderAsync
-            Return MyBase.Channel.ScheduleOrderAsync(request)
-        End Function
-        
-        Public Function ScheduleOrderAsync(ByVal TokenHeader As EVASoap.TokenHeader, ByVal ScheduleOrder As EVASoap.ScheduleOrder) As System.Threading.Tasks.Task(Of EVASoap.schedule_orderResponse1)
-            Dim inValue As EVASoap.ScheduleOrder1 = New EVASoap.ScheduleOrder1()
-            inValue.TokenHeader = TokenHeader
-            inValue.ScheduleOrder = ScheduleOrder
-            Return CType(Me,EVASoap.pacs_soap_service).ScheduleOrderAsync(inValue)
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_CancelAppointment(ByVal request As EVASoap.CancelAppointment1) As EVASoap.cancel_appointmentResponse1 Implements EVASoap.pacs_soap_service.CancelAppointment
-            Return MyBase.Channel.CancelAppointment(request)
-        End Function
-        
-        Public Function CancelAppointment(ByVal TokenHeader As EVASoap.TokenHeader, ByVal CancelAppointment1 As EVASoap.CancelAppointment) As EVASoap.cancel_appointmentResponse
-            Dim inValue As EVASoap.CancelAppointment1 = New EVASoap.CancelAppointment1()
-            inValue.TokenHeader = TokenHeader
-            inValue.CancelAppointment = CancelAppointment1
-            Dim retVal As EVASoap.cancel_appointmentResponse1 = CType(Me,EVASoap.pacs_soap_service).CancelAppointment(inValue)
-            Return retVal.cancel_appointmentResponse
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_CancelAppointmentAsync(ByVal request As EVASoap.CancelAppointment1) As System.Threading.Tasks.Task(Of EVASoap.cancel_appointmentResponse1) Implements EVASoap.pacs_soap_service.CancelAppointmentAsync
-            Return MyBase.Channel.CancelAppointmentAsync(request)
-        End Function
-        
-        Public Function CancelAppointmentAsync(ByVal TokenHeader As EVASoap.TokenHeader, ByVal CancelAppointment As EVASoap.CancelAppointment) As System.Threading.Tasks.Task(Of EVASoap.cancel_appointmentResponse1)
-            Dim inValue As EVASoap.CancelAppointment1 = New EVASoap.CancelAppointment1()
-            inValue.TokenHeader = TokenHeader
-            inValue.CancelAppointment = CancelAppointment
-            Return CType(Me,EVASoap.pacs_soap_service).CancelAppointmentAsync(inValue)
         End Function
     End Class
 End Namespace

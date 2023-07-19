@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap11enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s1="http://spyne.io/schema" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:s0="spyne.model.primitive.string" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xop="http://www.w3.org/2004/08/xop/include" xmlns:wsdlsoap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap11env="http://schemas.xmlsoap.org/soap/envelope/" name="pacs_soap_service" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
+      <xs:import namespace="http://spyne.io/schema" />
+      <xs:import namespace="spyne.model.primitive.string" />
+      <xs:complexType name="authenticate" />
+      <xs:complexType name="AuthenticationTokenResponse">
+        <xs:sequence>
+          <xs:element name="token" type="s0:MandatoryString" />
+          <xs:element name="expires" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestHeader">
+        <xs:sequence>
+          <xs:element name="email" type="s0:MandatoryString" />
+          <xs:element name="password" type="s0:MandatoryString" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrderResponseComplex_folioType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="FacilityComplexModel_external_identifierType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_order_descriptionType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_phone_numberType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_last_surnameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_modalityType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_phone_numberType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_emailType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TokenHeader_tokenType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_study_internal_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderResponseComplex_statusType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelOrder_cancel_reasonType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_emailType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_genderType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_order_folioType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_genderType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PatientComplexModel_phone_codeType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PractitionerComplexModel_first_surnameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OrderComplexModel_study_nameType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TokenHeader">
+        <xs:sequence>
+          <xs:element name="Token" type="soap11env:TokenHeader_tokenType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FacilityComplexModel">
+        <xs:sequence>
+          <xs:element name="Identifier" type="soap11env:FacilityComplexModel_external_identifierType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderComplexModel">
+        <xs:sequence>
+          <xs:element name="Folio" type="soap11env:OrderComplexModel_order_folioType" />
+          <xs:element name="Description" type="soap11env:OrderComplexModel_order_descriptionType" />
+          <xs:element name="StudyCode" type="soap11env:OrderComplexModel_study_internal_codeType" />
+          <xs:element name="StudyName" type="soap11env:OrderComplexModel_study_nameType" />
+          <xs:element name="Modality" type="soap11env:OrderComplexModel_modalityType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PatientResponseComplex">
+        <xs:sequence>
+          <xs:element name="id" type="s1:MandatoryUuid" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PatientComplexModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Identifier" nillable="true" type="xs:string" />
+          <xs:element name="Name" type="soap11env:PatientComplexModel_nameType" />
+          <xs:element minOccurs="0" name="FirstSurname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastSurname" nillable="true" type="xs:string" />
+          <xs:element name="Email" type="soap11env:PatientComplexModel_emailType" />
+          <xs:element name="Gender" type="soap11env:PatientComplexModel_genderType" />
+          <xs:element name="BirthDate" type="xs:date" />
+          <xs:element name="PhoneCode" type="soap11env:PatientComplexModel_phone_codeType" />
+          <xs:element name="PhoneNumber" type="soap11env:PatientComplexModel_phone_numberType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PractitionerComplexModel">
+        <xs:sequence>
+          <xs:element name="Name" type="soap11env:PractitionerComplexModel_nameType" />
+          <xs:element name="FirstSurname" type="soap11env:PractitionerComplexModel_first_surnameType" />
+          <xs:element name="LastSurname" type="soap11env:PractitionerComplexModel_last_surnameType" />
+          <xs:element name="Email" type="soap11env:PractitionerComplexModel_emailType" />
+          <xs:element name="PhoneCode" type="soap11env:PractitionerComplexModel_phone_codeType" />
+          <xs:element name="PhoneNumber" type="soap11env:PractitionerComplexModel_phone_numberType" />
+          <xs:element name="Gender" type="soap11env:PractitionerComplexModel_genderType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authenticateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="authenticateResult" nillable="true" type="soap11env:AuthenticationTokenResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OrderResponseComplex_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GetOrder_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CancelOrder_idType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="OrderResponseComplex">
+        <xs:sequence>
+          <xs:element name="Id" type="soap11env:OrderResponseComplex_idType" />
+          <xs:element name="Status" type="soap11env:OrderResponseComplex_statusType" />
+          <xs:element name="Folio" type="soap11env:OrderResponseComplex_folioType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendOrderRequest">
+        <xs:sequence>
+          <xs:element name="Order" type="soap11env:OrderComplexModel" />
+          <xs:element name="Facility" type="soap11env:FacilityComplexModel" />
+          <xs:element name="Patient" type="soap11env:PatientComplexModel" />
+          <xs:element name="Physician" type="soap11env:PractitionerComplexModel" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrder">
+        <xs:sequence>
+          <xs:element name="OrderId" type="soap11env:CancelOrder_idType" />
+          <xs:element name="CancelReason" type="soap11env:CancelOrder_cancel_reasonType" />
+          <xs:element minOccurs="0" name="CancelDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrder">
+        <xs:sequence>
+          <xs:element name="OrderId" type="soap11env:GetOrder_idType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendOrderResponseComplex">
+        <xs:sequence>
+          <xs:element name="Order" type="soap11env:OrderResponseComplex" />
+          <xs:element name="Patient" type="soap11env:PatientResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendOrder">
+        <xs:sequence>
+          <xs:element name="OrderRequest" type="soap11env:SendOrderRequest" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrderResponse">
+        <xs:sequence>
+          <xs:element name="cancel_orderResult" type="soap11env:SendOrderResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderResponse">
+        <xs:sequence>
+          <xs:element name="get_orderResult" type="soap11env:SendOrderResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="send_orderResponse">
+        <xs:sequence>
+          <xs:element name="send_orderResult" type="soap11env:SendOrderResponseComplex" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="authenticate" type="soap11env:authenticate" />
+      <xs:element name="AuthenticationTokenResponse" type="soap11env:AuthenticationTokenResponse" />
+      <xs:element name="RequestHeader" type="soap11env:RequestHeader" />
+      <xs:element name="TokenHeader" type="soap11env:TokenHeader" />
+      <xs:element name="Facility" type="soap11env:FacilityComplexModel" />
+      <xs:element name="Order" type="soap11env:OrderResponseComplex" />
+      <xs:element name="Patient" type="soap11env:PatientComplexModel" />
+      <xs:element name="Physician" type="soap11env:PractitionerComplexModel" />
+      <xs:element name="authenticateResponse" type="soap11env:authenticateResponse" />
+      <xs:element name="OrderRequest" type="soap11env:SendOrderRequest" />
+      <xs:element name="CancelOrder" type="soap11env:CancelOrder" />
+      <xs:element name="GetOrder" type="soap11env:GetOrder" />
+      <xs:element name="SendOrderResponseComplex" type="soap11env:SendOrderResponseComplex" />
+      <xs:element name="SendOrder" type="soap11env:SendOrder" />
+      <xs:element name="CancelOrderResponse" type="soap11env:CancelOrderResponse" />
+      <xs:element name="OrderResponse" type="soap11env:OrderResponse" />
+      <xs:element name="send_orderResponse" type="soap11env:send_orderResponse" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="spyne.model.primitive.string">
+      <xs:simpleType name="MandatoryString">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://spyne.io/schema">
+      <xs:simpleType name="uuid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="MandatoryUuid">
+        <xs:restriction base="s1:uuid">
+          <xs:minLength value="1" />
+          <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="authenticate">
+    <wsdl:part name="authenticate" element="soap11env:authenticate" />
+  </wsdl:message>
+  <wsdl:message name="authenticateResponse">
+    <wsdl:part name="authenticateResponse" element="soap11env:authenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="RequestHeader" element="soap11env:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendOrder">
+    <wsdl:part name="SendOrder" element="soap11env:SendOrder" />
+  </wsdl:message>
+  <wsdl:message name="send_orderResponse">
+    <wsdl:part name="send_orderResponse" element="soap11env:send_orderResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokenHeader">
+    <wsdl:part name="TokenHeader" element="soap11env:TokenHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrder">
+    <wsdl:part name="GetOrder" element="soap11env:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrderResponse">
+    <wsdl:part name="OrderResponse" element="soap11env:OrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelOrder">
+    <wsdl:part name="CancelOrder" element="soap11env:CancelOrder" />
+  </wsdl:message>
+  <wsdl:message name="CancelOrderResponse">
+    <wsdl:part name="CancelOrderResponse" element="soap11env:CancelOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="pacs_soap_service">
+    <wsdl:operation name="authenticate" parameterOrder="authenticate">
+      <wsdl:documentation>Authenticate user and returns a valid token.</wsdl:documentation>
+      <wsdl:input name="authenticate" message="soap11env:authenticate" />
+      <wsdl:output name="authenticateResponse" message="soap11env:authenticateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOrder" parameterOrder="SendOrder">
+      <wsdl:documentation>Send order information.</wsdl:documentation>
+      <wsdl:input name="SendOrder" message="soap11env:SendOrder" />
+      <wsdl:output name="send_orderResponse" message="soap11env:send_orderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder" parameterOrder="GetOrder">
+      <wsdl:documentation>Retrive the order for given id.</wsdl:documentation>
+      <wsdl:input name="GetOrder" message="soap11env:GetOrder" />
+      <wsdl:output name="OrderResponse" message="soap11env:OrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelOrder" parameterOrder="CancelOrder">
+      <wsdl:documentation>Cancel the order for given id.</wsdl:documentation>
+      <wsdl:input name="CancelOrder" message="soap11env:CancelOrder" />
+      <wsdl:output name="CancelOrderResponse" message="soap11env:CancelOrderResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="pacs_soap_service" type="soap11env:pacs_soap_service">
+    <wsdlsoap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="authenticate">
+      <wsdlsoap11:operation soapAction="authenticate" style="document" />
+      <wsdl:input name="authenticate">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="authenticateResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOrder">
+      <wsdlsoap11:operation soapAction="SendOrder" style="document" />
+      <wsdl:input name="SendOrder">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:TokenHeader" part="TokenHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="send_orderResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdlsoap11:operation soapAction="GetOrder" style="document" />
+      <wsdl:input name="GetOrder">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:TokenHeader" part="TokenHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="OrderResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOrder">
+      <wsdlsoap11:operation soapAction="CancelOrder" style="document" />
+      <wsdl:input name="CancelOrder">
+        <wsdlsoap11:body use="literal" />
+        <wsdlsoap11:header message="soap11env:TokenHeader" part="TokenHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CancelOrderResponse">
+        <wsdlsoap11:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthService">
+    <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
+      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL" />
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:service name="OrderService">
+    <wsdl:port name="pacs_soap_service" binding="soap11env:pacs_soap_service">
+      <wsdlsoap11:address location="https://testing-soap.dev-land.space:443/api/v1/soap/?WSDL" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
