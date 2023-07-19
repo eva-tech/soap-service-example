@@ -23,32 +23,20 @@ Namespace EVASoap
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function authenticate(ByVal request As EVASoap.authenticate1) As EVASoap.authenticateResponse1
         
-        <System.ServiceModel.OperationContractAttribute(Action:="authenticate", ReplyAction:="*")>  _
-        Function authenticateAsync(ByVal request As EVASoap.authenticate1) As System.Threading.Tasks.Task(Of EVASoap.authenticateResponse1)
-        
         'CODEGEN: Se está generando un contrato de mensaje, ya que la operación SendOrder no es RPC ni está encapsulada en un documento.
         <System.ServiceModel.OperationContractAttribute(Action:="SendOrder", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function SendOrder(ByVal request As EVASoap.SendOrder1) As EVASoap.send_orderResponse1
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="SendOrder", ReplyAction:="*")>  _
-        Function SendOrderAsync(ByVal request As EVASoap.SendOrder1) As System.Threading.Tasks.Task(Of EVASoap.send_orderResponse1)
         
         'CODEGEN: Se está generando un contrato de mensaje, ya que la operación GetOrder no es RPC ni está encapsulada en un documento.
         <System.ServiceModel.OperationContractAttribute(Action:="GetOrder", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function GetOrder(ByVal request As EVASoap.GetOrder1) As EVASoap.OrderResponse1
         
-        <System.ServiceModel.OperationContractAttribute(Action:="GetOrder", ReplyAction:="*")>  _
-        Function GetOrderAsync(ByVal request As EVASoap.GetOrder1) As System.Threading.Tasks.Task(Of EVASoap.OrderResponse1)
-        
         'CODEGEN: Se está generando un contrato de mensaje, ya que la operación CancelOrder no es RPC ni está encapsulada en un documento.
         <System.ServiceModel.OperationContractAttribute(Action:="CancelOrder", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function CancelOrder(ByVal request As EVASoap.CancelOrder1) As EVASoap.CancelOrderResponse1
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="CancelOrder", ReplyAction:="*")>  _
-        Function CancelOrderAsync(ByVal request As EVASoap.CancelOrder1) As System.Threading.Tasks.Task(Of EVASoap.CancelOrderResponse1)
     End Interface
     
     '''<remarks/>
@@ -1288,18 +1276,6 @@ Namespace EVASoap
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_authenticateAsync(ByVal request As EVASoap.authenticate1) As System.Threading.Tasks.Task(Of EVASoap.authenticateResponse1) Implements EVASoap.pacs_soap_service.authenticateAsync
-            Return MyBase.Channel.authenticateAsync(request)
-        End Function
-        
-        Public Function authenticateAsync(ByVal RequestHeader As EVASoap.RequestHeader, ByVal authenticate As EVASoap.authenticate) As System.Threading.Tasks.Task(Of EVASoap.authenticateResponse1)
-            Dim inValue As EVASoap.authenticate1 = New EVASoap.authenticate1()
-            inValue.RequestHeader = RequestHeader
-            inValue.authenticate = authenticate
-            Return CType(Me,EVASoap.pacs_soap_service).authenticateAsync(inValue)
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Function EVASoap_pacs_soap_service_SendOrder(ByVal request As EVASoap.SendOrder1) As EVASoap.send_orderResponse1 Implements EVASoap.pacs_soap_service.SendOrder
             Return MyBase.Channel.SendOrder(request)
         End Function
@@ -1310,18 +1286,6 @@ Namespace EVASoap
             inValue.SendOrder = SendOrder1
             Dim retVal As EVASoap.send_orderResponse1 = CType(Me,EVASoap.pacs_soap_service).SendOrder(inValue)
             Return retVal.send_orderResponse
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_SendOrderAsync(ByVal request As EVASoap.SendOrder1) As System.Threading.Tasks.Task(Of EVASoap.send_orderResponse1) Implements EVASoap.pacs_soap_service.SendOrderAsync
-            Return MyBase.Channel.SendOrderAsync(request)
-        End Function
-        
-        Public Function SendOrderAsync(ByVal TokenHeader As EVASoap.TokenHeader, ByVal SendOrder As EVASoap.SendOrder) As System.Threading.Tasks.Task(Of EVASoap.send_orderResponse1)
-            Dim inValue As EVASoap.SendOrder1 = New EVASoap.SendOrder1()
-            inValue.TokenHeader = TokenHeader
-            inValue.SendOrder = SendOrder
-            Return CType(Me,EVASoap.pacs_soap_service).SendOrderAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
@@ -1338,18 +1302,6 @@ Namespace EVASoap
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_GetOrderAsync(ByVal request As EVASoap.GetOrder1) As System.Threading.Tasks.Task(Of EVASoap.OrderResponse1) Implements EVASoap.pacs_soap_service.GetOrderAsync
-            Return MyBase.Channel.GetOrderAsync(request)
-        End Function
-        
-        Public Function GetOrderAsync(ByVal TokenHeader As EVASoap.TokenHeader, ByVal GetOrder As EVASoap.GetOrder) As System.Threading.Tasks.Task(Of EVASoap.OrderResponse1)
-            Dim inValue As EVASoap.GetOrder1 = New EVASoap.GetOrder1()
-            inValue.TokenHeader = TokenHeader
-            inValue.GetOrder = GetOrder
-            Return CType(Me,EVASoap.pacs_soap_service).GetOrderAsync(inValue)
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Function EVASoap_pacs_soap_service_CancelOrder(ByVal request As EVASoap.CancelOrder1) As EVASoap.CancelOrderResponse1 Implements EVASoap.pacs_soap_service.CancelOrder
             Return MyBase.Channel.CancelOrder(request)
         End Function
@@ -1360,18 +1312,6 @@ Namespace EVASoap
             inValue.CancelOrder = CancelOrder1
             Dim retVal As EVASoap.CancelOrderResponse1 = CType(Me,EVASoap.pacs_soap_service).CancelOrder(inValue)
             Return retVal.CancelOrderResponse
-        End Function
-        
-        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function EVASoap_pacs_soap_service_CancelOrderAsync(ByVal request As EVASoap.CancelOrder1) As System.Threading.Tasks.Task(Of EVASoap.CancelOrderResponse1) Implements EVASoap.pacs_soap_service.CancelOrderAsync
-            Return MyBase.Channel.CancelOrderAsync(request)
-        End Function
-        
-        Public Function CancelOrderAsync(ByVal TokenHeader As EVASoap.TokenHeader, ByVal CancelOrder As EVASoap.CancelOrder) As System.Threading.Tasks.Task(Of EVASoap.CancelOrderResponse1)
-            Dim inValue As EVASoap.CancelOrder1 = New EVASoap.CancelOrder1()
-            inValue.TokenHeader = TokenHeader
-            inValue.CancelOrder = CancelOrder
-            Return CType(Me,EVASoap.pacs_soap_service).CancelOrderAsync(inValue)
         End Function
     End Class
 End Namespace
