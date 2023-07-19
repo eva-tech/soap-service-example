@@ -52,7 +52,7 @@ Namespace EVASoap
     End Interface
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -100,7 +100,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -134,7 +134,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -182,7 +182,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -244,7 +244,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -278,7 +278,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -340,7 +340,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -374,7 +374,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -408,7 +408,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -442,7 +442,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -476,7 +476,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -594,7 +594,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -602,6 +602,8 @@ Namespace EVASoap
     Partial Public Class PatientComplexModel
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
+        
+        Private identifierField As String
         
         Private nameField As String
         
@@ -620,7 +622,19 @@ Namespace EVASoap
         Private phoneNumberField As String
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
+        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=0)>  _
+        Public Property Identifier() As String
+            Get
+                Return Me.identifierField
+            End Get
+            Set
+                Me.identifierField = value
+                Me.RaisePropertyChanged("Identifier")
+            End Set
+        End Property
+        
+        '''<remarks/>
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Name() As String
             Get
                 Return Me.nameField
@@ -632,7 +646,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=1)>  _
+        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=2)>  _
         Public Property FirstSurname() As String
             Get
                 Return Me.firstSurnameField
@@ -644,7 +658,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=2)>  _
+        <System.Xml.Serialization.XmlElementAttribute(IsNullable:=true, Order:=3)>  _
         Public Property LastSurname() As String
             Get
                 Return Me.lastSurnameField
@@ -656,7 +670,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property Email() As String
             Get
                 Return Me.emailField
@@ -668,7 +682,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property Gender() As String
             Get
                 Return Me.genderField
@@ -680,7 +694,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(DataType:="date", Order:=5)>  _
+        <System.Xml.Serialization.XmlElementAttribute(DataType:="date", Order:=6)>  _
         Public Property BirthDate() As Date
             Get
                 Return Me.birthDateField
@@ -692,7 +706,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property PhoneCode() As String
             Get
                 Return Me.phoneCodeField
@@ -704,7 +718,7 @@ Namespace EVASoap
         End Property
         
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property PhoneNumber() As String
             Get
                 Return Me.phoneNumberField
@@ -726,7 +740,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -760,7 +774,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -850,7 +864,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -926,7 +940,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -960,7 +974,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -1008,7 +1022,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -1042,7 +1056,7 @@ Namespace EVASoap
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0"),  _
      System.SerializableAttribute(),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
